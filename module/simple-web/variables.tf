@@ -28,3 +28,21 @@ variable "vpc_cidr" {
   type        = string
   default     = "192.168.0.0/24"
 }
+
+variable "public_subnets" {
+  description = "Public subnet CIDR block list"
+  type        = list(string)
+  default     = []
+}
+
+variable "private_subnets" {
+  description = "Private subnet CIDR block list"
+  type        = list(string)
+  default     = []
+}
+
+variable "availability_zones" {
+  description = "List of AZs where subnets will be created"
+  type        = list(string)
+  default     = []
+}
