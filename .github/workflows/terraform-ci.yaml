@@ -1,0 +1,41 @@
+name: "Continuous Integration - Terraform provisioning"
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/terraform-ci.yaml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: terraform init
+      run: |
+        terraform init -backend=false
+        terraform validate
+    - name: run tflint
+      run: |
+        curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+        tflint --init
+  provisioning:
+    runs-on: ubuntu-22.04
+    permissions:
+      id-token: write
+      contents: read
+    needs: validate
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{ secrets.AWS_GIRHUB_OICD_ROLE }}
+        aws-region: ap-northeast-2
+    - name: terraform init 
+      run: |
+        terraform init
+        terraform plan -no-color -input=false
+      continue-on-error: true
+    - name: terraform apply
+      run: terraform apply
