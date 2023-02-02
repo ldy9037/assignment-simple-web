@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
+    - uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.1.7
     - name: terraform init
       run: |
         terraform init -backend=false
@@ -32,6 +35,9 @@ jobs:
       with:
         role-to-assume: ${{ secrets.AWS_GIRHUB_OICD_ROLE }}
         aws-region: ap-northeast-2
+    - uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.1.7
     - name: terraform init 
       run: |
         terraform init
