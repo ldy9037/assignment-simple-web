@@ -43,5 +43,5 @@ jobs:
         terraform init
         terraform plan -no-color -input=false
       continue-on-error: true
-    - name: terraform apply
-      run: terraform apply
+    - name: terraform apply 
+      run: terraform apply -auto-approve -input=false
