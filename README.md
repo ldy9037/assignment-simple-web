@@ -15,7 +15,9 @@ No providers.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_simple_web"></a> [simple\_web](#module\_simple\_web) | ./module/simple-web | n/a |
 
 ## Resources
 
