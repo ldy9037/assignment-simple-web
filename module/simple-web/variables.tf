@@ -22,3 +22,9 @@ variable "tags_team" {
   type        = string
   default     = ""
 }
+
+variable "vpc_cidr" {
+  description = "VPC CIDR"
+  type        = string
+  default     = "192.168.0.0/24"
+}
