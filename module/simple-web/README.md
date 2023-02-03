@@ -27,6 +27,8 @@ No modules.
 | [aws_route_table.public](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table) | resource |
 | [aws_route_table_association.private](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table_association) | resource |
 | [aws_route_table_association.public](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table_association) | resource |
+| [aws_s3_bucket.logs](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/s3_bucket) | resource |
+| [aws_s3_bucket_acl.logs_acl](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/s3_bucket_acl) | resource |
 | [aws_subnet.private](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/subnet) | resource |
 | [aws_subnet.public](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/subnet) | resource |
 | [aws_vpc.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/vpc) | resource |
@@ -36,6 +38,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | List of AZs where subnets will be created | `list(string)` | `[]` | no |
+| <a name="input_log_bucket"></a> [log\_bucket](#input\_log\_bucket) | S3 bucket name for simple-web log | `string` | `"s3-simple-web-logs"` | no |
 | <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | Private subnet CIDR block list | `list(string)` | `[]` | no |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | Public subnet CIDR block list | `list(string)` | `[]` | no |
 | <a name="input_region"></a> [region](#input\_region) | AWS Region | `string` | `"ap-northeast-2"` | no |

@@ -46,3 +46,9 @@ variable "availability_zones" {
   type        = list(string)
   default     = []
 }
+
+variable "log_bucket" {
+  description = "S3 bucket name for simple-web log"
+  type        = string
+  default     = "s3-simple-web-logs"
+}
