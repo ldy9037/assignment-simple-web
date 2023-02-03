@@ -25,6 +25,9 @@ No modules.
 | [aws_iam_policy.tfstate_dynamodb](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/iam_policy) | resource |
 | [aws_s3_bucket.logs](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/s3_bucket) | resource |
+| [aws_s3_bucket_acl.logs_acl](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/s3_bucket_acl) | resource |
+| [aws_s3_bucket_acl.main_acl](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/s3_bucket_acl) | resource |
+| [aws_s3_bucket_logging.main_logging](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/s3_bucket_logging) | resource |
 
 ## Inputs
 
