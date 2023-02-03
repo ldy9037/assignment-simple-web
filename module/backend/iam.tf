@@ -36,7 +36,8 @@ resource "aws_iam_policy" "tfstate_dynamodb" {
           "dynamodb:DescribeTable",
           "dynamodb:GetItem",
           "dynamodb:PutItem",
-          "dynamodb:DeleteItem"
+          "dynamodb:DeleteItem",
+          "dynamodb:DescribeContinuousBackups"
         ],
         Resource = "arn:aws:dynamodb:*:*:table/${aws_dynamodb_table.main.id}"
       }
