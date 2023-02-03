@@ -1,5 +1,9 @@
 locals {
   region = "ap-northeast-2"
+  oidc_policies = [
+    module.backend.bucket_policy_arn,
+    module.backend.dynamodb_policy_arn
+  ]
 }
 
 module "backend" {
@@ -16,13 +20,13 @@ module "backend" {
   tfstate_key = "backend/terraform.tfstate"
 }
 
-module "oidc_provider_role" {
+module "oidc_role" {
   source = "./module/oidc"
 
   name              = "GithubActionsDeploy"
   github_username   = "ldy9037"
   github_repository = "assignment-simple-web"
-  policies          = []
+  policies          = local.oidc_policies
 }
 
 module "simple_web" {

@@ -47,5 +47,8 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_bucket_policy_arn"></a> [bucket\_policy\_arn](#output\_bucket\_policy\_arn) | IAM Policy ARN for s3 bucket Access |
+| <a name="output_dynamodb_policy_arn"></a> [dynamodb\_policy\_arn](#output\_dynamodb\_policy\_arn) | IAM Policy ARN for DynamoDB Access |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

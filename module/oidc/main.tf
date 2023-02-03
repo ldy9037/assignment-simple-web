@@ -1,8 +1,12 @@
 locals {
   provider_url = "token.actions.githubusercontent.com"
+  policies     = concat(var.policies, [data.aws_iam_policy.vpc_access.arn])
 }
 
 data "aws_caller_identity" "current" {}
+data "aws_iam_policy" "vpc_access" {
+  name = "AmazonVPCFullAccess"
+}
 
 data "aws_iam_policy_document" "github_actions_trust" {
   statement {
@@ -45,8 +49,8 @@ resource "aws_iam_role" "main" {
 }
 
 resource "aws_iam_role_policy_attachment" "main" {
-  count = length(var.policies)
+  count = length(local.policies)
 
   role       = aws_iam_role.main.name
-  policy_arn = var.policies[count.index]
+  policy_arn = local.policies[count.index]
 }
