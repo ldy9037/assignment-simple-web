@@ -16,6 +16,15 @@ module "backend" {
   tfstate_key = "backend/terraform.tfstate"
 }
 
+module "oidc_provider_role" {
+  source = "./module/oidc"
+
+  name              = "GithubActionsDeploy"
+  github_username   = "ldy9037"
+  github_repository = "assignment-simple-web"
+  policies          = []
+}
+
 module "simple_web" {
   source = "./module/simple-web"
 
