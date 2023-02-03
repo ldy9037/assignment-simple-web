@@ -41,7 +41,25 @@ variable "log_bucket" {
 }
 
 variable "log_key_prefix" {
-  description = "To specify a key prefix for tfstate log objects."
+  description = "To specify a key prefix for tfstate log objects"
   type        = string
   default     = ""
+}
+
+variable "bucket_access_policy_name" {
+  description = "iam policy name for tfstate bucket access"
+  type        = string
+  default     = "S3StateAccess"
+}
+
+variable "dynamodb_access_policy_name" {
+  description = "iam policy name for tfstate dynamodb access"
+  type        = string
+  default     = "DynamoDBStateLockAccess"
+}
+
+variable "tfstate_key" {
+  description = "The path where the tfstate file will be saved"
+  type        = string
+  default     = "/"
 }

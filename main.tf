@@ -12,6 +12,8 @@ module "backend" {
   tfstate_bucket        = "s3-tfstate-management"
   log_bucket            = "s3-tfstate-logs"
   log_key_prefix        = "simple-web"
+
+  tfstate_key = "backend/terraform.tfstate"
 }
 
 module "simple_web" {
