@@ -6,6 +6,13 @@ terraform {
     }
   }
 
+  backend "s3" {
+    bucket         = "s3-tfstate-management"
+    key            = "backend/terraform.tfstate"
+    dynamodb_table = "TerraformStateLock"
+    region         = "ap-northeast-2"
+  }
+
   required_version = "1.1.7"
 }
 
