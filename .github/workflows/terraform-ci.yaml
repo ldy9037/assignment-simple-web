@@ -2,9 +2,7 @@ name: "Continuous Integration - Terraform provisioning"
 on:
   push:
     branches:
-      - master
-    paths:
-      - '.github/workflows/terraform-ci.yaml'
+      - master      
 
 jobs:
   validate:
