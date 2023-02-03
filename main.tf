@@ -9,6 +9,9 @@ module "backend" {
   tags_team        = "personal"
 
   state_lock_table_name = "TerraformStateLock"
+  tfstate_bucket        = "s3-tfstate-management"
+  log_bucket            = "s3-tfstate-logs"
+  log_key_prefix        = "simple-web"
 }
 
 module "simple_web" {

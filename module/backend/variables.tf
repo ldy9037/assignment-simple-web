@@ -27,3 +27,21 @@ variable "state_lock_table_name" {
   type        = string
   default     = "TerraformStateLock"
 }
+
+variable "tfstate_bucket" {
+  description = "S3 bucket name for tfstate"
+  type        = string
+  default     = "s3-tfstate-management"
+}
+
+variable "log_bucket" {
+  description = "S3 bucket name for tfstate log"
+  type        = string
+  default     = "s3-tfstate-logs"
+}
+
+variable "log_key_prefix" {
+  description = "To specify a key prefix for tfstate log objects."
+  type        = string
+  default     = ""
+}
