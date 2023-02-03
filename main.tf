@@ -2,6 +2,15 @@ locals {
   region = "ap-northeast-2"
 }
 
+module "backend" {
+  source = "./module/backend"
+
+  tags_environment = "common"
+  tags_team        = "personal"
+
+  state_lock_table_name = "TerraformStateLock"
+}
+
 module "simple_web" {
   source = "./module/simple-web"
 
