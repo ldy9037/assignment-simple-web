@@ -6,18 +6,13 @@ resource "aws_iam_policy" "tfstate_bucket" {
     Version = "2012-10-17"
     Statement = [
       {
-        Effect   = "Allow",
-        Action   = "s3:ListBucket",
-        Resource = "arn:aws:s3:::${aws_s3_bucket.main.id}"
-      },
-      {
         Effect = "Allow",
-        Action = [
-          "s3:GetObject",
-          "s3:PutObject",
-          "s3:DeleteObject"
-        ],
-        Resource = "arn:aws:s3:::${aws_s3_bucket.main.id}/${var.tfstate_key}"
+        Action = "s3:*",
+        Resource = [
+          "arn:aws:s3:::${aws_s3_bucket.main.id}",
+          "arn:aws:s3:::${aws_s3_bucket.main.id}/*",
+          "arn:aws:s3:::${aws_s3_bucket.logs.id}"
+        ]
       }
     ]
   })
@@ -37,9 +32,34 @@ resource "aws_iam_policy" "tfstate_dynamodb" {
           "dynamodb:GetItem",
           "dynamodb:PutItem",
           "dynamodb:DeleteItem",
-          "dynamodb:DescribeContinuousBackups"
+          "dynamodb:DescribeContinuousBackups",
+          "dynamodb:DescribeTimeToLive",
+          "dynamodb:ListTagsOfResource"
         ],
         Resource = "arn:aws:dynamodb:*:*:table/${aws_dynamodb_table.main.id}"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_policy" "read_poliy" {
+  name        = var.read_policies_policy_name
+  description = "Policy for resource policies"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow",
+        Action = [
+          "iam:GetPolicy",
+          "iam:ListPolicies",
+          "iam:GetPolicyVersion",
+          "iam:ListRolePolicies",
+          "iam:GetRole",
+          "iam:ListAttachedRolePolicies"
+        ],
+        Resource = "*"
       }
     ]
   })

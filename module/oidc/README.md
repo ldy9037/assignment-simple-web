@@ -23,7 +23,7 @@ No modules.
 | [aws_iam_role.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/caller_identity) | data source |
-| [aws_iam_policy.vpc_access](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/iam_policy) | data source |
+| [aws_iam_policy.aws_managed](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/iam_policy) | data source |
 | [aws_iam_policy_document.github_actions_trust](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs

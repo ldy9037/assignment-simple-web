@@ -63,3 +63,9 @@ variable "tfstate_key" {
   type        = string
   default     = "/"
 }
+
+variable "read_policies_policy_name" {
+  description = "iam policy name for read to resource policies"
+  type        = string
+  default     = "ResourcePoliciesAccess"
+}

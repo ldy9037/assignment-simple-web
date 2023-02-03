@@ -2,7 +2,8 @@ locals {
   region = "ap-northeast-2"
   oidc_policies = [
     module.backend.bucket_policy_arn,
-    module.backend.dynamodb_policy_arn
+    module.backend.dynamodb_policy_arn,
+    module.backend.resource_policies_policy_arn
   ]
 }
 
