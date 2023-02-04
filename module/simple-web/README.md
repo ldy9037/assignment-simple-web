@@ -28,6 +28,8 @@ No modules.
 | [aws_internet_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/internet_gateway) | resource |
 | [aws_launch_template.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/launch_template) | resource |
 | [aws_lb.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/lb) | resource |
+| [aws_lb_listener.http](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/lb_listener) | resource |
+| [aws_lb_listener.https](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/lb_listener) | resource |
 | [aws_lb_target_group.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/lb_target_group) | resource |
 | [aws_nat_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/nat_gateway) | resource |
 | [aws_route53_record.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route53_record) | resource |
