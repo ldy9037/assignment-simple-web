@@ -82,3 +82,21 @@ variable "launch_template_name" {
   type        = string
   default     = "web-server-template"
 }
+
+variable "asg_desired_capacity" {
+  description = "The number of EC2 instances you want to keep"
+  type        = number
+  default     = 1
+}
+
+variable "asg_min_size" {
+  description = "Minimum number of EC2 instances"
+  type        = number
+  default     = 1
+}
+
+variable "asg_max_size" {
+  description = "Maximum number of EC2 instances"
+  type        = number
+  default     = 2
+}

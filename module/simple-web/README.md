@@ -20,6 +20,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_autoscaling_group.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/autoscaling_group) | resource |
 | [aws_eip.nat_ip](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/eip) | resource |
 | [aws_iam_policy.log_bucket](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/iam_policy) | resource |
 | [aws_internet_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/internet_gateway) | resource |
@@ -47,6 +48,9 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_alb_log_enble"></a> [alb\_log\_enble](#input\_alb\_log\_enble) | Whether to enable ALB logs | `bool` | `true` | no |
 | <a name="input_alb_name"></a> [alb\_name](#input\_alb\_name) | ALB name | `string` | `"simple-web-external-alb"` | no |
+| <a name="input_asg_desired_capacity"></a> [asg\_desired\_capacity](#input\_asg\_desired\_capacity) | The number of EC2 instances you want to keep | `number` | `1` | no |
+| <a name="input_asg_max_size"></a> [asg\_max\_size](#input\_asg\_max\_size) | Maximum number of EC2 instances | `number` | `2` | no |
+| <a name="input_asg_min_size"></a> [asg\_min\_size](#input\_asg\_min\_size) | Minimum number of EC2 instances | `number` | `1` | no |
 | <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | List of AZs where subnets will be created | `list(string)` | `[]` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type for web server | `string` | `"t2.micro"` | no |
 | <a name="input_launch_template_name"></a> [launch\_template\_name](#input\_launch\_template\_name) | Name for web server launch template | `string` | `"web-server-template"` | no |
