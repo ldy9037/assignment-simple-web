@@ -20,12 +20,14 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_autoscaling_attachment.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/autoscaling_attachment) | resource |
 | [aws_autoscaling_group.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/autoscaling_group) | resource |
 | [aws_eip.nat_ip](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/eip) | resource |
 | [aws_iam_policy.log_bucket](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/iam_policy) | resource |
 | [aws_internet_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/internet_gateway) | resource |
 | [aws_launch_template.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/launch_template) | resource |
 | [aws_lb.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/lb) | resource |
+| [aws_lb_target_group.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/lb_target_group) | resource |
 | [aws_nat_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/nat_gateway) | resource |
 | [aws_route_table.private](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table) | resource |
 | [aws_route_table.public](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table) | resource |
@@ -48,6 +50,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_alb_log_enble"></a> [alb\_log\_enble](#input\_alb\_log\_enble) | Whether to enable ALB logs | `bool` | `true` | no |
 | <a name="input_alb_name"></a> [alb\_name](#input\_alb\_name) | ALB name | `string` | `"simple-web-external-alb"` | no |
+| <a name="input_alb_tg_name"></a> [alb\_tg\_name](#input\_alb\_tg\_name) | ALB target group name | `string` | `"web-server-lb-tg"` | no |
 | <a name="input_asg_desired_capacity"></a> [asg\_desired\_capacity](#input\_asg\_desired\_capacity) | The number of EC2 instances you want to keep | `number` | `1` | no |
 | <a name="input_asg_max_size"></a> [asg\_max\_size](#input\_asg\_max\_size) | Maximum number of EC2 instances | `number` | `2` | no |
 | <a name="input_asg_min_size"></a> [asg\_min\_size](#input\_asg\_min\_size) | Minimum number of EC2 instances | `number` | `1` | no |

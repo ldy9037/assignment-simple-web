@@ -38,3 +38,8 @@ resource "aws_autoscaling_group" "web_server" {
     version = "$Latest"
   }
 }
+
+resource "aws_autoscaling_attachment" "web_server" {
+  autoscaling_group_name = aws_autoscaling_group.web_server.id
+  lb_target_group_arn    = aws_lb_target_group.web_server.arn
+}

@@ -100,3 +100,9 @@ variable "asg_max_size" {
   type        = number
   default     = 2
 }
+
+variable "alb_tg_name" {
+  description = "ALB target group name"
+  type        = string
+  default     = "web-server-lb-tg"
+}
