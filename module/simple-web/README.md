@@ -23,6 +23,7 @@ No modules.
 | [aws_eip.nat_ip](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/eip) | resource |
 | [aws_iam_policy.log_bucket](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/iam_policy) | resource |
 | [aws_internet_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/internet_gateway) | resource |
+| [aws_launch_template.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/launch_template) | resource |
 | [aws_lb.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/lb) | resource |
 | [aws_nat_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/nat_gateway) | resource |
 | [aws_route_table.private](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table) | resource |
@@ -35,6 +36,7 @@ No modules.
 | [aws_subnet.private](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/subnet) | resource |
 | [aws_subnet.public](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/subnet) | resource |
 | [aws_vpc.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/vpc) | resource |
+| [aws_ami.ubuntu_22](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/ami) | data source |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/caller_identity) | data source |
 | [aws_elb_service_account.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/elb_service_account) | data source |
 | [aws_iam_policy_document.allow_access_alb](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/iam_policy_document) | data source |
@@ -46,6 +48,8 @@ No modules.
 | <a name="input_alb_log_enble"></a> [alb\_log\_enble](#input\_alb\_log\_enble) | Whether to enable ALB logs | `bool` | `true` | no |
 | <a name="input_alb_name"></a> [alb\_name](#input\_alb\_name) | ALB name | `string` | `"simple-web-external-alb"` | no |
 | <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | List of AZs where subnets will be created | `list(string)` | `[]` | no |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type for web server | `string` | `"t2.micro"` | no |
+| <a name="input_launch_template_name"></a> [launch\_template\_name](#input\_launch\_template\_name) | Name for web server launch template | `string` | `"web-server-template"` | no |
 | <a name="input_log_bucket"></a> [log\_bucket](#input\_log\_bucket) | S3 bucket name for simple-web log | `string` | `"s3-simple-web-logs"` | no |
 | <a name="input_log_bucket_access_policy_name"></a> [log\_bucket\_access\_policy\_name](#input\_log\_bucket\_access\_policy\_name) | iam policy name for log bucket access | `string` | `"S3LogsAccess"` | no |
 | <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | Private subnet CIDR block list | `list(string)` | `[]` | no |

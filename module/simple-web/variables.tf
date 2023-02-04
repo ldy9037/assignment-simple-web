@@ -70,3 +70,15 @@ variable "alb_log_enble" {
   type        = bool
   default     = true
 }
+
+variable "instance_type" {
+  description = "Instance type for web server"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "launch_template_name" {
+  description = "Name for web server launch template"
+  type        = string
+  default     = "web-server-template"
+}
