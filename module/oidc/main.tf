@@ -1,7 +1,8 @@
 locals {
   provider_url = "token.actions.githubusercontent.com"
   aws_policies = [
-    "AmazonVPCFullAccess"
+    "AmazonVPCFullAccess",
+    "ElasticLoadBalancingFullAccess"
   ]
   policies = concat(var.policies, [for policy in data.aws_iam_policy.aws_managed : policy.arn])
 }

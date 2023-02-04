@@ -58,3 +58,15 @@ variable "log_bucket_access_policy_name" {
   type        = string
   default     = "S3LogsAccess"
 }
+
+variable "alb_name" {
+  description = "ALB name"
+  type        = string
+  default     = "simple-web-external-alb"
+}
+
+variable "alb_log_enble" {
+  description = "Whether to enable ALB logs"
+  type        = bool
+  default     = true
+}

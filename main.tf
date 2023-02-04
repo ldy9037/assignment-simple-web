@@ -38,7 +38,7 @@ module "simple_web" {
   tags_team        = "personal"
 
   vpc_cidr           = "192.168.1.0/24"
-  public_subnets     = ["192.168.1.0/28"]
-  private_subnets    = ["192.168.1.16/28"]
-  availability_zones = ["${local.region}a"]
+  public_subnets     = ["192.168.1.0/28", "192.168.1.32/28"]
+  private_subnets    = ["192.168.1.16/28", "192.168.1.48/28"]
+  availability_zones = ["${local.region}a", "${local.region}c"]
 }
