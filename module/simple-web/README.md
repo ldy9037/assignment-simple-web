@@ -21,6 +21,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_eip.nat_ip](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/eip) | resource |
+| [aws_iam_policy.log_bucket](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/iam_policy) | resource |
 | [aws_internet_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/internet_gateway) | resource |
 | [aws_nat_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/nat_gateway) | resource |
 | [aws_route_table.private](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table) | resource |
@@ -39,6 +40,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | List of AZs where subnets will be created | `list(string)` | `[]` | no |
 | <a name="input_log_bucket"></a> [log\_bucket](#input\_log\_bucket) | S3 bucket name for simple-web log | `string` | `"s3-simple-web-logs"` | no |
+| <a name="input_log_bucket_access_policy_name"></a> [log\_bucket\_access\_policy\_name](#input\_log\_bucket\_access\_policy\_name) | iam policy name for log bucket access | `string` | `"S3LogsAccess"` | no |
 | <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | Private subnet CIDR block list | `list(string)` | `[]` | no |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | Public subnet CIDR block list | `list(string)` | `[]` | no |
 | <a name="input_region"></a> [region](#input\_region) | AWS Region | `string` | `"ap-northeast-2"` | no |
@@ -49,5 +51,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_log_bucket_policy_arn"></a> [log\_bucket\_policy\_arn](#output\_log\_bucket\_policy\_arn) | IAM policy ARN for s3 log bucket access |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

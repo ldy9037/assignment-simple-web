@@ -52,3 +52,9 @@ variable "log_bucket" {
   type        = string
   default     = "s3-simple-web-logs"
 }
+
+variable "log_bucket_access_policy_name" {
+  description = "iam policy name for log bucket access"
+  type        = string
+  default     = "S3LogsAccess"
+}

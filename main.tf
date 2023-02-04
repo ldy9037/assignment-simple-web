@@ -3,7 +3,8 @@ locals {
   oidc_policies = [
     module.backend.bucket_policy_arn,
     module.backend.dynamodb_policy_arn,
-    module.backend.resource_policies_policy_arn
+    module.backend.resource_policies_policy_arn,
+    module.simple_web.log_bucket_policy_arn
   ]
 }
 
