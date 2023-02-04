@@ -63,3 +63,23 @@ resource "aws_route_table_association" "private" {
   route_table_id = aws_route_table.private.id
 }
 
+data "aws_route53_zone" "main" {
+  name = var.domain_name
+}
+
+resource "aws_route53_record" "web_server" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = "simple-web.${data.aws_route53_zone.main.name}"
+  type    = "CNAME"
+  ttl     = "300"
+  records = [aws_lb.main.dns_name]
+}
+
+resource "aws_acm_certificate" "web_server" {
+  domain_name       = aws_route53_record.web_server.fqdn
+  validation_method = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}

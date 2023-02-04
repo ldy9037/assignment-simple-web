@@ -106,3 +106,9 @@ variable "alb_tg_name" {
   type        = string
   default     = "web-server-lb-tg"
 }
+
+variable "domain_name" {
+  description = "Domain to use"
+  type        = string
+  default     = ""
+}

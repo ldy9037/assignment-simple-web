@@ -20,6 +20,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_acm_certificate.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/acm_certificate) | resource |
 | [aws_autoscaling_attachment.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/autoscaling_attachment) | resource |
 | [aws_autoscaling_group.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/autoscaling_group) | resource |
 | [aws_eip.nat_ip](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/eip) | resource |
@@ -29,6 +30,7 @@ No modules.
 | [aws_lb.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/lb) | resource |
 | [aws_lb_target_group.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/lb_target_group) | resource |
 | [aws_nat_gateway.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/nat_gateway) | resource |
+| [aws_route53_record.web_server](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route53_record) | resource |
 | [aws_route_table.private](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table) | resource |
 | [aws_route_table.public](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table) | resource |
 | [aws_route_table_association.private](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/resources/route_table_association) | resource |
@@ -43,6 +45,7 @@ No modules.
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/caller_identity) | data source |
 | [aws_elb_service_account.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/elb_service_account) | data source |
 | [aws_iam_policy_document.allow_access_alb](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/iam_policy_document) | data source |
+| [aws_route53_zone.main](https://registry.terraform.io/providers/hashicorp/aws/4.52.0/docs/data-sources/route53_zone) | data source |
 
 ## Inputs
 
@@ -55,6 +58,7 @@ No modules.
 | <a name="input_asg_max_size"></a> [asg\_max\_size](#input\_asg\_max\_size) | Maximum number of EC2 instances | `number` | `2` | no |
 | <a name="input_asg_min_size"></a> [asg\_min\_size](#input\_asg\_min\_size) | Minimum number of EC2 instances | `number` | `1` | no |
 | <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | List of AZs where subnets will be created | `list(string)` | `[]` | no |
+| <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain to use | `string` | `""` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type for web server | `string` | `"t2.micro"` | no |
 | <a name="input_launch_template_name"></a> [launch\_template\_name](#input\_launch\_template\_name) | Name for web server launch template | `string` | `"web-server-template"` | no |
 | <a name="input_log_bucket"></a> [log\_bucket](#input\_log\_bucket) | S3 bucket name for simple-web log | `string` | `"s3-simple-web-logs"` | no |
