@@ -16,7 +16,10 @@ resource "aws_launch_template" "web_server" {
   instance_type           = var.instance_type
   disable_api_termination = true
   image_id                = data.aws_ami.ubuntu_22.image_id
-  #security_group_names    = []
+  security_group_names = [
+    aws_security_group.allow_all_egress.id,
+    aws_security_group.allow_http_from_internal.id
+  ]
 
   monitoring {
     enabled = true
