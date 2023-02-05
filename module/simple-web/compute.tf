@@ -47,6 +47,14 @@ resource "aws_autoscaling_group" "web_server" {
     strategy = "Rolling"
     triggers = ["launch_template"]
   }
+
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      load_balancers,
+      target_group_arns
+    ]
+  }
 }
 
 resource "aws_autoscaling_attachment" "web_server" {
