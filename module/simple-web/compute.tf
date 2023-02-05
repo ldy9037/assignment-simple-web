@@ -16,10 +16,6 @@ resource "aws_launch_template" "web_server" {
   instance_type           = var.instance_type
   disable_api_termination = true
   image_id                = data.aws_ami.ubuntu_22.image_id
-  security_group_names = [
-    aws_security_group.allow_all_egress.id,
-    aws_security_group.allow_http_from_internal.id
-  ]
 
   monitoring {
     enabled = true
@@ -27,7 +23,13 @@ resource "aws_launch_template" "web_server" {
 
   network_interfaces {
     associate_public_ip_address = false
+    security_groups = [
+      aws_security_group.allow_all_egress.id,
+      aws_security_group.allow_http_from_internal.id
+    ]
   }
+
+  user_data = filebase64("${path.module}/scripts/run_nginx.sh")
 }
 
 resource "aws_autoscaling_group" "web_server" {
@@ -38,7 +40,12 @@ resource "aws_autoscaling_group" "web_server" {
 
   launch_template {
     id      = aws_launch_template.web_server.id
-    version = "$Latest"
+    version = aws_launch_template.web_server.latest_version
+  }
+
+  instance_refresh {
+    strategy = "Rolling"
+    triggers = ["launch_template"]
   }
 }
 
