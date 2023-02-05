@@ -2,7 +2,9 @@ name: "Continuous Integration - Terraform provisioning"
 on:
   push:
     branches:
-      - master      
+      - master 
+    paths-ignore:
+      - "**/README.md"
 
 jobs:
   validate:

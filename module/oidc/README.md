@@ -1,3 +1,6 @@
+## 소개 
+OIDC 설정관련 리소스가 구성되어 있는 모듈입니다. 자격 증명 공급자는 기존에 등록이 되어 있기 때문에 생략하였으며, OIDC 용 AssumeRole만 구성되어 있습니다. 이 OIDC AssumeRole은 Github Actions에서 Terraform이 AWS에 리소스를 구성할 때 사용됩니다. 
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 

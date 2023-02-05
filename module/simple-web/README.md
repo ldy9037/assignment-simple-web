@@ -1,3 +1,7 @@
+## 소개
+nginx가 구동되는 간단한 Web Application 환경이 구성되어 있는 모듈입니다. 해당 모듈을 사용해 리소스를 생성하면 아래와 다이어그램과 같이 구성됩니다.
+![architecture](https://user-images.githubusercontent.com/36755917/216800873-f3d4b72a-f430-48ec-a788-fecbf93a2593.png)
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 

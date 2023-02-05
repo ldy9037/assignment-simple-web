@@ -1,3 +1,6 @@
+## 소개 
+S3 Backend를 위한 리소스가 구성되어 있습니다. tfstate용 bucket, tfstate 액세스 로그가 저장되는 log bucket, state lock을 관리하는 DynamoDB table이 구성되어 있습니다. 
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
