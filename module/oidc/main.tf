@@ -4,7 +4,8 @@ locals {
     "AmazonVPCFullAccess",
     "ElasticLoadBalancingFullAccess",
     "AmazonRoute53FullAccess",
-    "AWSCertificateManagerFullAccess"
+    "AWSCertificateManagerFullAccess",
+    "AmazonEC2FullAccess"
   ]
   policies = concat(var.policies, [for policy in data.aws_iam_policy.aws_managed : policy.arn])
 }
